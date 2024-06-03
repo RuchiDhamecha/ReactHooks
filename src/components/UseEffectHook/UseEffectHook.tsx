@@ -4,14 +4,14 @@ import { UseEffectHookProps } from "./UseEffectHook.types.ts"
 import Axios  from "axios";
  
 const UseEffectHook = ({}: UseEffectHookProps) => { 
-    const [data,setData] =useState("");
+    const [data,setData] = useState("");
     const [count,setCount]=useState(0);
     useEffect(()=>{
         Axios
         .get("https://jsonplaceholder.typicode.com/comments")
         .then((response:any)=>{
             setData(response.data[0].email);
-            console.log("api called");
+            console.log("api called")
         })
     },[])
     return(
